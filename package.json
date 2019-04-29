@@ -1,7 +1,7 @@
 {
   "name": "backend-marc-thiongo",
   "version": "1.0.0",
-  "description": "Better Friends Reminders will ensure that you never again have to forget yours friends and families birthdays or anniverseries",
+  "description": "Better Friends Reminders will ensure that you never again have to forget yours friends and families birthdays or anniversaries",
   "main": "index.js",
   "repository": "https://github.com/better-friends/BackEnd-Marc-Thiongo.git",
   "author": "Marc Thiongo",
