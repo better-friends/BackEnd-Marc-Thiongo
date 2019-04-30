@@ -6,7 +6,7 @@
   "repository": "https://github.com/better-friends/BackEnd-Marc-Thiongo.git",
   "author": "Marc Thiongo",
   "scripts": {
-    "start": "nodemon",
+    "start": "node index.js",
     "server": "nodemon index.js"
   },
   "dependencies": {
