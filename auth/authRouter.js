@@ -2,6 +2,7 @@ const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const secrets = require('../config/secrets.js');
+const restricted = require('./restricted-middleware.js');
 
 const Users = require('../users/userModel.js');
 
@@ -20,7 +21,7 @@ router.post('/register', (req, res) => {
   });
 });
 
-router.post('/login', (req, res) => {
+router.post('/login', restricted, (req, res) => {
   let { username, password } = req.body;
 
   Users.findBy({ username })
