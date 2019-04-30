@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^7.0.0",
     "express": "^4.16.4",
     "helmet": "^3.16.0",
     "knex": "^0.16.5"
@@ -18,7 +19,6 @@
   "devDependencies": {
     "bcryptjs": "^2.4.3",
     "connect-session-knex": "^1.4.0",
-    "dotenv": "^7.0.0",
     "express-sessions": "^1.0.6",
     "jsonwebtoken": "^8.5.1",
     "knex-cleaner": "^1.1.4",
