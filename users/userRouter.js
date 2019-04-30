@@ -25,7 +25,7 @@ router.put('/:id', restricted, (req, res) => {
       res.json(users);
     })
     .catch(err => res.send(err));
-})
+});
 
 router.delete('/:id', restricted, async (req, res) => {
   try {

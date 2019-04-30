@@ -3,9 +3,9 @@ exports.up = function(knex, Promise) {
     return knex.schema.createTable('family', tbl => {
       tbl.increments();
   
-      tbl.string('name').notNullable();
+      tbl.string('name').notNullable().unique();
         
-      tbl.integer('phone').notNullable();  
+      tbl.integer('phone').notNullable().unique();  
       
       tbl.dateTime('anniversary').notNullable();
       
