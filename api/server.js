@@ -21,7 +21,7 @@ server.use('/api/friends', friendRouter);
 server.use('/api/family', familyRouter);
 
 server.get('/', (req, res) => {
-    res.send("API is running!");
+    res.send([]);
 });
   
 module.exports = server;
