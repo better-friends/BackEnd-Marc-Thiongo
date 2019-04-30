@@ -54,19 +54,3 @@ function generateToken(user) {
 }
 
 module.exports = router;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-module.exports = router;
