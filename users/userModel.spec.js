@@ -50,20 +50,4 @@ describe('user model', () => {
             expect(users).toEqual( ['users'] )
         })
     });
-    
-//     describe('put()', () => {
-//         beforeEach(async () => {
-//             await db('users')
-//         })
-//         it('should update the provided users from the db', async () => {
-//             await Users.update({ changes })
-//             const users = await db('users')
-//             expect(users).toHaveLength(1)
-//         })
-//         it('should return []', async () => {
-//             await Users.update([{ id: '1' }])
-//             const users = await (['users']) 
-//             expect(users).toEqual( ['users'] )
-//         })
-// });
 });
