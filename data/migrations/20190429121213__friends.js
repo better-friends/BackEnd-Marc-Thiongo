@@ -5,7 +5,7 @@ exports.up = function(knex, Promise) {
 
     tbl.string('name').notNullable().unique();
       
-    tbl.integer('phone').notNullable().unique();  
+    tbl.integer('phone').notNullable().unique();
     
     tbl.dateTime('anniversary').notNullable();
     

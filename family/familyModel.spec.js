@@ -24,7 +24,7 @@ describe('family model', () => {
             await db('users').truncate()
         })
         it('should add the provided members into the db', async () => {
-            await Users.add({ name: 'Alice', phone: 7777777888, anniversary: '4/8/2019', birthday: '6/9/1991', graduation: '5/20/2019', wedding: 'N/A', comment: 'They will be away for a month after graduation, set up a surprise party' })
+            await Users.add({ name: 'Alice', phone: 7777777888, anniversary: '4/8/2019', birthday: '6/9/1991', graduation: '5/20/2019', wedding: 'N/A', comment: 'They will be away for a month after birthday, set up a surprise party' })
             const users = await db('users')
             expect(users).toHaveLength(0)
         })
@@ -40,7 +40,7 @@ describe('family model', () => {
             await db('users')
         })
         it('should remove the provided members from the db', async () => {
-            await Users.remove({name: 'Alice', phone: 7777777888, anniversary: '4/8/2019', birthday: '6/9/1991', graduation: '5/20/2019', wedding: 'N/A', comment: 'They will be away for a month after graduation, set up a surprise party' })
+            await Users.remove({name: 'Alice', phone: 7777777888, anniversary: '4/8/2019', birthday: '6/9/1991', graduation: '5/20/2019', wedding: 'N/A', comment: 'They will be away for a month after birthday, set up a surprise party' })
             const users = await db('users')
             expect(users).toHaveLength(0)
         })
