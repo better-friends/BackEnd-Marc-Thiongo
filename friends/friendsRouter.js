@@ -2,7 +2,9 @@ const router = require('express').Router();
 
 const Friend = require('./friendsModel.js');
 
-router.get('/', (req, res) => {
+const restricted = require('../auth/restricted-middleware.js');
+
+router.get('/', restricted, (req, res) => {
   Friend.find()
     .then(friend => {
       res.json(friend);
@@ -10,7 +12,7 @@ router.get('/', (req, res) => {
     .catch(err => res.send(err));
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:id', restricted, (req, res) => {
   Friend.findById(req.params.id)
     .then(friend => {
       res.json(friend);
@@ -18,7 +20,7 @@ router.get('/:id', (req, res) => {
     .catch(err => res.send(err));
 });
 
-router.post('/', (req, res) => {
+router.post('/', restricted, (req, res) => {
   Friend.add(req.body)
     .then(friend => {
       res.json(friend);
@@ -26,7 +28,7 @@ router.post('/', (req, res) => {
     .catch(err => res.send(err));
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', restricted, (req, res) => {
   Friend.update(req.params.id, req.body)
     .then(friend => {
       res.json(friend);
@@ -34,7 +36,7 @@ router.put('/:id', (req, res) => {
     .catch(err => res.send(err));
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', restricted, async (req, res) => {
   try {
     const deleteFriend = await Friend.remove(req.params.id);
     res.status(200).json(deleteFriend);

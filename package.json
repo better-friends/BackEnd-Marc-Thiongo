@@ -7,7 +7,7 @@
   "author": "Marc Thiongo",
   "scripts": {
     "start": "node index.js",
-    "test": "jest --watch --verbose",
+    "test": "jest --watchAll --verbose",
     "server": "nodemon index.js"
   },
   "dependencies": {
