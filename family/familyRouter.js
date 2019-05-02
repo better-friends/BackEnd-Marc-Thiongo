@@ -2,9 +2,9 @@ const router = require('express').Router();
 
 const Family = require('./familyModel.js');
 
-const restricted = require('../auth/restricted-middleware.js');
+// const restricted = require('../auth/restricted-middleware.js');
 
-router.get('/', restricted, (req, res) => {
+router.get('/', (req, res) => {
   Family.find()
     .then(family => {
       res.json(family);
@@ -12,7 +12,7 @@ router.get('/', restricted, (req, res) => {
     .catch(err => res.send(err));
 });
 
-router.get('/:id', restricted, (req, res) => {
+router.get('/:id', (req, res) => {
   Family.findById(req.params.id)
     .then(family => {
       res.json(family);
@@ -20,7 +20,7 @@ router.get('/:id', restricted, (req, res) => {
     .catch(err => res.send(err));
 });
 
-router.post('/', restricted, (req, res) => {
+router.post('/', (req, res) => {
   Family.add(req.body)
     .then(family => {
       res.json(family);
@@ -28,7 +28,7 @@ router.post('/', restricted, (req, res) => {
     .catch(err => res.send(err));
 });
 
-router.put('/:id', restricted, (req, res) => {
+router.put('/:id',  (req, res) => {
   Family.update(req.params.id, req.body)
     .then(family => {
       res.json(family);
@@ -36,7 +36,7 @@ router.put('/:id', restricted, (req, res) => {
     .catch(err => res.send(err));
 });
 
-router.delete('/:id', restricted, async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     const deleteMember = await Family.remove(req.params.id);
     res.status(200).json(deleteMember);

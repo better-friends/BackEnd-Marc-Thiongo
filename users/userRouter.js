@@ -1,9 +1,9 @@
 const router = require('express').Router();
 
 const Users = require('./userModel.js');
-const restricted = require('../auth/restricted-middleware.js');
+// const restricted = require('../auth/restricted-middleware.js');
 
-router.get('/', restricted, (req, res) => {
+router.get('/', (req, res) => {
   Users.find()
     .then(users => {
       res.json(users);
@@ -11,7 +11,7 @@ router.get('/', restricted, (req, res) => {
     .catch(err => res.send(err));
 });
 
-router.get('/:id', restricted, (req, res) => {
+router.get('/:id', (req, res) => {
   Users.findById(req.params.id)
     .then(users => {
       res.json(users);
@@ -19,7 +19,7 @@ router.get('/:id', restricted, (req, res) => {
     .catch(err => res.send(err));
 });
 
-router.put('/:id', restricted, (req, res) => {
+router.put('/:id', (req, res) => {
   Users.update(req.params.id, req.body)
     .then(users => {
       res.json(users);
@@ -27,7 +27,7 @@ router.put('/:id', restricted, (req, res) => {
     .catch(err => res.send(err));
 });
 
-router.delete('/:id', restricted, async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     const deleteUser = await Users.remove(req.params.id);
     res.status(200).json(deleteUser);
